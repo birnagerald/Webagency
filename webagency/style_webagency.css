@@ -1,0 +1,633 @@
+/*On reset toutes les valeurs de CSS pour partir de 0.*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	top:0px;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ajout des polices */
+
+@font-face{
+    font-family : "Roboto";
+    src : url('./fonts/Roboto-Black.ttf');
+}
+@font-face{
+    font-family : "RobotoBold";
+    src : url('./fonts/Roboto-Bold.ttf');
+}
+@font-face{
+    font-family : "RobotoThin";
+    src : url('./fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'FontAwsome';
+  src: url('./fonts/fontawsome-webfont.eot');
+  src: url('./fonts/fontawsome-webfont.woff') format('woff');
+  src: url('./fonts/fontawsome-webfont.ttf') format('truetype');
+  src: url('./fonts/fontawsome-webfont.otf') format('otf');
+  src: url('./fonts/fontawsome-webfont.svg') format('svg');
+}
+
+/*style de base*/
+
+body
+{
+	font-family: "Roboto", sans-serif;
+
+}
+
+h3
+{
+	font-family: "RobotoBold", sans-serif;
+	font-size: 1.6em;
+	margin: 0 0 2% 0;
+}
+
+h2
+{
+	font-size: 2.1em;
+	font-family: "RobotoBold", sans-serif;
+	text-align: center;
+	margin: 2%;
+	text-transform: uppercase;
+}
+
+h1
+{
+	font-family: "RobotoBold", sans-serif;
+	font-size: 3.5em;
+}
+
+
+.separateur
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 2%;
+}
+
+.iconeseparateur
+{
+	width: 3%;
+	/*height: 1px;*/
+	margin: 0;
+}
+
+.fa-circle
+{
+	color: #62a8d0;
+	padding: 4px;
+	background-color: #FFF;
+	border-radius: 50%;
+}
+
+
+/*header*/
+
+/*logo + nav*/
+
+nav
+{
+	z-index: 2;
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	background-color: #FFF;
+	box-shadow: 0 5px 10px black;
+}
+
+nav img
+{
+	margin: 5% 0 5% 0;
+}
+
+.menu
+{
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+}
+
+.menu_item
+{
+	margin: 0 15% 0 0;
+	padding: 31px 0 0 0;
+}
+
+.menu_item_active
+{
+	text-decoration: none;
+	font-family: "RobotoBold", sans-serif;
+	color: #000;
+	border-top: 4px solid #62a8d0;
+	margin: 0 15% 0 0;
+	padding: 27px 0 0 0;
+}
+
+.menu_item a
+{
+	text-decoration: none;
+	font-family: "RobotoBold", sans-serif;
+	color: #000;
+}
+
+.menu_item a:hover
+{
+	border-top: 4px solid #62a8d0;
+	padding: 25px 0 30px 0;
+}
+
+
+.menu_item_active a
+{
+	text-decoration: none;
+	font-family: "RobotoBold", sans-serif;
+	color: #000;
+}
+
+/*slider*/
+
+#slider
+{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	box-shadow: 0px 25px 25px #999999;
+	padding-top: 3.7%;
+}
+
+.image_slider
+{
+	position: relative;
+	width: 500%;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	left: 0;
+	text-align: left;
+	animation: 13s slide infinite;
+	-webkit-animation: 13s slide infinite;
+	-moz-animation: 13s slide infinite;
+}
+
+/* ---keframes du slider--- */
+
+@keyframes slide {
+  0% { left: 0%; }
+  25% { left: 0%; }
+  50% { left: -100%; }
+  75% { left: -100%; }
+  100% { left: 0%; }
+}
+
+@-webkit-keyframes slide {
+  0% { left: 0%; }
+  25% { left: 0%; }
+  50% { left: -100%; }
+  75% { left: -100%; }
+  100% { left: 0%; }
+}
+
+@-moz-keyframes slide {
+  0% { left: 0%; }
+  25% { left: 0%; }
+  50% { left: -100%; }
+  75% { left: -100%; }
+  100% { left: 0%; }
+}
+
+.image_slider img
+{
+	width: 20%;
+	height: auto;
+	color: #fff;
+	font-size: 1.5em;
+}
+
+.fa-chevron-left
+{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	color: #fff;
+	font-size: 1.8em;
+	border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 20px 20px 5px;
+}
+
+.fa-chevron-right
+{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	color: #fff;
+	font-size: 1.8em;
+	border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 5px 20px 20px;
+}
+
+.fa-chevron-left:hover, .fa-chevron-right:hover
+{
+	font-size: 2em;
+}
+
+.agencyname
+{
+	color: #62a8d0;
+}
+
+.text_slider
+{
+	position: absolute;
+	top: 32%;
+	left: 10%;
+	color: #fff;
+	width: 50%;
+}
+
+.text_slider p
+{
+	font-size: 1.2em;
+}
+
+.text_slider a
+{
+	position: absolute;
+	margin: 5% 0 0 0;
+	text-decoration: none;
+	background-color: #62a8d0;
+	font-family: "RobotoBold", sans-serif;
+	font-size: 1.2em;
+	color: #fff;
+	border-bottom: 3px solid #4c88aa;
+	border-radius: 5px;
+	padding: 2%;
+	top: 100%;
+
+}
+
+/*section 1*/
+
+#services
+{
+	margin: 5% 0 0 0;
+	background-color: #FFF;
+
+}
+
+.services_content
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.services_img
+{
+	margin: 3% 0 3% 15%;
+	/*background-color: #000;*/
+}
+
+
+.services_description
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	/*background-color: #0f0;*/
+	margin: 5% 0 3% 10%;
+	
+}
+
+.services_blocs
+{
+	width: 65%;
+	display: flex;
+	flex-direction: row;
+	margin: 15px 0 0 0;
+
+}
+
+.servies_text
+{
+	margin: 4% 0 0 3%;
+}
+
+.services_icons
+{
+	position: relative;
+	border: 1px solid grey;
+	border-radius: 50%;
+	height: 35px;
+	width: 35px;
+	padding: 15px 12px 4px 8px;
+	margin: 5% 0 0 0;
+}
+
+.fa-chart-line, .fa-chart-pie, .fa-cubes
+{
+	color: #62a8d0;
+	padding: 5px 10px;
+}
+
+.circleservices
+{
+	position: absolute;
+	top: 15px;
+	right: -12px;
+}
+
+.présentation
+{
+	text-align: center;
+	padding: 1%;
+	margin: 0 25% 0 25%;
+}
+
+/*section 2*/
+
+#projets
+{
+	padding-top: 3%;
+	background-color: #f5f5f5;
+}
+
+.projets_nav
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 5%;
+}
+
+.projets_nav li
+{
+	position: relative;
+	padding: 15px 25px 15px 25px;
+	background-color: #a5a5a5;
+	font-family: "RobotoBold", sans-serif;
+	color: #fff;
+}
+
+.projets_nav li:nth-child(1)
+{
+	border-radius: 5px 0 0 5px;
+	background-color: #62a8d0;
+	border-bottom: 3px solid #4c88aa;
+}
+
+.projets_nav li:nth-child(4)
+{
+	border-radius: 0 5px 5px 0;
+}
+
+.projets_nav li:hover
+{
+	background-color: #62a8d0;
+	border-bottom: 3px solid #4c88aa;
+}
+
+.projets_nav li:hover .triangle
+{
+	opacity: 1;
+}
+
+.triangleactive
+{
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 7.5px 0 7.5px;
+	border-color: #4c88aa transparent transparent transparent;
+}
+
+.triangle
+{
+	opacity: 0;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 7.5px 0 7.5px;
+	border-color: #4c88aa transparent transparent transparent;
+}
+
+.projets_content
+{
+	padding-bottom: 5%;
+	margin: 3% 5% 0 10%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.projets_content div
+{
+	display: flex;
+	flex-direction: row;
+	margin: 10px 2% 10px 0;
+	padding: 0;
+	width: 23%;
+}
+
+.projets_content img
+{
+	width: 100%;
+}
+
+figure
+{
+	position: relative;
+}
+
+
+figcaption
+{
+	position: absolute;
+	top: 54%;
+	width: 100%;
+	height: 45%;
+	font-family: "RobotoBold", sans-serif;
+	color: #fff;
+	text-align: left;
+	background-color: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+
+}
+
+figure:hover figcaption
+{
+	opacity: 1;
+}
+
+figcaption p
+{
+	font-size: 1em;
+	padding: 0 0 0 3%;
+}
+
+figcaption h4
+{
+	font-size: 1.5em;
+	padding: 3% 0 0 3%;
+}
+
+
+.fa-eye
+{
+	position: absolute;
+	top: -28%;
+	right: 8%;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	padding: 6%;
+	background-color: #62a8d0;
+}
+
+figure .activeportfoliomenu
+{
+	opacity: 1;
+}
+
+/*section 3*/
+
+#contact
+{
+	position: relative;
+}
+
+form
+{
+	position: relative;
+	z-index: 1;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 3px;
+	width: 330px;
+	height: 535px;
+	margin: 15% 0 0 0;
+	padding: 40px 40px 50px 30px;
+}
+
+form a
+{
+	position: absolute;
+	background-color: #62a8d0;
+	padding: 3%;
+	border-bottom: 3px solid #4c88aa;
+	border-radius: 5px; 
+	font-family: "RobotoBold", sans-serif;
+	font-size: 1.2em;
+	color: #fff;
+	top: 89%;
+	left: 9%;
+	text-decoration: none;
+}
+
+address  h4
+{
+	font-weight : bold;
+}
+
+.formposition
+{
+	position: absolute;
+	bottom: 20%;
+	right: 5%;
+}
+
+input, textarea
+{
+	width: 100%;
+	height: 30px;
+	border-radius: 3px;
+	margin: 5% 1% 1% 1%;
+	padding: 2% 0 1% 4%;
+}
+
+textarea
+{
+	padding: 2% 0 0 3%;
+	height:200px;
+}
+
+iframe
+{
+	width: 100%;
+}
+
+.iframecontent
+{	
+	background-color: #62a8d0;
+	border: none;
+}
+
+/*footer*/
+
+.text_footer
+{
+	text-align: center;
+	background-color: #62a8d0;
+	color: #fff;
+	padding: 1%;
+	font-family: "RobotoBold", sans-serif;
+	font-size: 0.8em;
+	border-bottom: 5px solid #4c88aa;
+}
